@@ -10,7 +10,8 @@
                 {{-- <img src="..." class="card-img-top" alt="..."> --}}
                 <div class="card-body">
                     <h5 class="card-title">{{ $post_item->title }}</h5>
-                    <a href="#" class="btn btn-primary">Read the full post</a>
+                    <a href="{{ route('admin.posts.show', ['post' => $post_item->id]) }}" class="btn btn-primary">Read the
+                        full post</a>
                 </div>
             </div>
             {{-- /single post looped for each element in the db posts table --}}
