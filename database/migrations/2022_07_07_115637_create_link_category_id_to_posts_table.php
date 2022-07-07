@@ -13,7 +13,7 @@ class CreateLinkCategoryIdToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('link_category_id_to_posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id')->nullable()->after('slug');
 
             $table->foreign('category_id')
