@@ -4,6 +4,7 @@
     <div class="container">
         <h1>{{ $post->title }}</h1>
         <p>{{ $post->slug }}</p>
+        <p>Category: {{ $category ? $category->name : 'no category' }}</p>
         <p>{{ $post->content }}</p>
         <div class="d-flex">
             <a class="btn btn-primary mr-4" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">Edit</a>
