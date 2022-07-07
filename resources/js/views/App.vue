@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>This is the Vue App</h2>
-    <GuestPage/>
+    <GuestPage />
   </div>
 </template>
 

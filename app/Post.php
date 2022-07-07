@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -10,4 +11,8 @@ class Post extends Model
       'title',
       'content'
     ];
+
+    public function category() {
+      return $this->belongsTo('App\Category');
+    }
 }
