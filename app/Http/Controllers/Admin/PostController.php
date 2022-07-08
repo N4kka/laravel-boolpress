@@ -117,9 +117,10 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post_updated = Post::findOrFail($id);
+        $post_updated->tags()->sync([]);
         $post_updated->delete();
 
-        return redirect()->route('admin.posts.index', compact('post_updated'));
+        return redirect()->route('admin.posts.index');
     }
 
     private function getValidationRules()
