@@ -30,6 +30,18 @@
                         {{ $category->name }}</option>
                 @endforeach
             </select>
+            <div class="mt-4">
+                <h4>Tags:</h4>
+                @foreach ($tags as $tag)
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" name="tags[]" type="checkbox" value="{{ $tag->id }}"
+                            id="{{ $tag->id }}" {{ in_array($tag->id, old('tags', [])) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="{{ $tag->id }}">
+                            {{ $tag->name }}
+                        </label>
+                    </div>
+                @endforeach
+            </div>
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
